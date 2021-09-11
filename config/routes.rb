@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root :to => 'users#index'
+  resources :users
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 end
