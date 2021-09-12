@@ -221,11 +221,10 @@ Rails.application.config.sorcery.configure do |config|
 
   config.line.key = Rails.application.credentials.line[:key]
   config.line.secret = Rails.application.credentials.line[:secret]
-  config.line.callback_url = "http://localhost:3000/oauth/callback?provider=line"
+  config.line.callback_url = "https://1166-106-184-133-242.ngrok.io/oauth/callback?provider=line"
   config.line.scope = "profile"
   config.line.bot_prompt = "normal"
   config.line.user_info_mapping = {name: 'displayName'}
-
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2

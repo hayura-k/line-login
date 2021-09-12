@@ -22,7 +22,12 @@
       </tr>
     <% end %>
   </tbody>
-  <%= link_to 'Login with LINE', auth_at_provider_path(:provider => :line) %>
+  <% if current_user %>
+    <%= link_to "Logout", :logout, method: :post %>
+  <% else %>
+    <%= link_to 'Login with LINE', auth_at_provider_path(:provider => :line) %>
+  <% end %>
+
 </table>
 
 <br>

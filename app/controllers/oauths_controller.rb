@@ -7,9 +7,12 @@ class OauthsController < ApplicationController
 
   def callback
     provider = params[:provider]
+
     if @user = login_from(provider)
       redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
     else
+      binding.pry
+
       begin
         @user = create_from(provider)
         # NOTE: this is the place to add '@user.activate!' if you are using user_activation submodule
